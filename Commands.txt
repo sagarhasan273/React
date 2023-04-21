@@ -28,5 +28,11 @@ npx create-react-app --template=typescript [folder name]
 npm init @eslint/config
 
 
+=>* create react project using Vite:
+
+npm create vite@latest
+
+
+
 
 
