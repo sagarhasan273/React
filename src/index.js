@@ -10,39 +10,12 @@
 
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+import App from './App';
 import './index.css';
 
-class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: ['apple', 'banana', 'orange'],
-    };
-  }
-
-  addItem = () => {
-    const newItem = 'pear';
-    this.setState({
-      items: [...this.state.items, newItem],
-    });
-  };
-
-  render() {
-    return (
-      <div>
-        <ul>
-          {this.state.items.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-        <button onClick={this.addItem}>Add Item</button>
-      </div>
-    );
-  }
+function Start() {
+  return <App />;
 }
-
 createRoot(document.getElementById('root')).render(
-  <div>
-    <MyComponent />
-  </div>,
+  <Start />,
 );
