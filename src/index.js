@@ -1,17 +1,38 @@
+/* eslint-disable react/sort-comp */
+/* eslint-disable react/no-unused-state */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prefer-stateless-function */
+
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+class Clocks extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { date: new Date() };
+  }
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  componentDidMount() {
+    this.timerID = setInterval(() => this.tick(), 1000);
+  }
+
+  tick() {
+    this.setState({ date: new Date() });
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  render() {
+    return (
+      <div className="heading">
+        <h1>Hello World!</h1>
+        <h2 className="text">It is, {this.state.date.toLocaleTimeString(this.props.locale)}</h2>
+      </div>
+    );
+  }
+}
+
+createRoot(document.getElementById('root')).render(<Clocks locale="bn-BD" />);
