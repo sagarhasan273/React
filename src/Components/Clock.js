@@ -9,10 +9,6 @@ class Clock extends React.Component {
     this.state = { date: new Date(), locale: 'bn-BD' };
   }
 
-  FormatTimeString() {
-    return this.state.date.toLocaleTimeString(this.state.locale);
-  }
-
   componentDidMount() {
     this.timerID = setInterval(() => this.tick(), 1000);
   }
@@ -34,9 +30,11 @@ class Clock extends React.Component {
   };
 
   render() {
+    console.log('Clock rendered');
+    const { date, locale } = this.state;
     return (
       <div>
-        <h1>Time is, {this.FormatTimeString()}</h1>
+        <h1>Time is, {date.toLocaleTimeString(locale)}</h1>
         <Button change={this.handleLocale} />
       </div>
     );

@@ -1,13 +1,12 @@
-/* eslint-disable react/prefer-stateless-function */
-import React from 'react';
 import Clock from './Components/Clock';
 
-class App extends React.Component {
-  render() {
-    return (
+function App() {
+  console.log('App component rendered');
+  return (
+    <div>
       <Clock />
-    );
-  }
+    </div>
+  );
 }
 
 export default App;
