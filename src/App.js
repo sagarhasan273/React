@@ -2,9 +2,7 @@ import MyComponent from './Components/MyComponent';
 
 function App() {
   return (
-    <div>
-      <MyComponent />
-    </div>
+    <MyComponent />
   );
 }
 
