@@ -1,6 +1,7 @@
 /* eslint-disable react/sort-comp */
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
+import Button from './Button';
 
 class Clock extends React.Component {
   constructor(props) {
@@ -36,7 +37,7 @@ class Clock extends React.Component {
     return (
       <div>
         <h1>Time is, {this.FormatTimeString()}</h1>
-        <button type="button" onClick={this.handleLocale.bind(this)}>Click Here</button>
+        <Button change={this.handleLocale} />
       </div>
     );
   }
