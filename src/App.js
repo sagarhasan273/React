@@ -1,11 +1,7 @@
-/* eslint-disable import/no-cycle */
-import MailBox from './components/MailBox';
+import Form from './components/Form';
 
-function App() {
-  const messages = ['React', 'Re: React', 'Re:Re: React'];
+export default function App() {
   return (
-    <MailBox unReadMessages={messages} />
+    <Form />
   );
 }
-
-export default App;

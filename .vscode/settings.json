@@ -22,5 +22,8 @@
 	"prettier.jsxSingleQuote": false,
 	"prettier.tabWidth": 4,
 	"prettier.arrowParens": "avoid",
-	"prettier.singleQuote": true
+	"prettier.singleQuote": true,
+	"emmet.syntaxProfiles": {
+		"javascript": "jsx"
+	}
 }
