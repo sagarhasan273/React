@@ -1,9 +1,10 @@
 /* eslint-disable import/no-cycle */
-import LoginControl from './components/LoginControl';
+import MailBox from './components/MailBox';
 
 function App() {
+  const messages = ['React', 'Re: React', 'Re:Re: React'];
   return (
-    <LoginControl />
+    <MailBox unReadMessages={messages} />
   );
 }
 
