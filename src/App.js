@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable jsx-a11y/label-has-associated-control */
@@ -5,15 +6,23 @@
 import React from 'react';
 
 class App extends React.Component {
-  handleSubmit() {
-    // event.preventDefault();
-    // Handle form submission logic here
-    console.log('called handleSubmit');
+  constructor(props) {
+    super(props);
+    this.state = { isToggled: true };
   }
 
+  handleSubmit = () => {
+    this.setState((prevState) => ({
+      isToggled: !prevState.isToggled,
+    }));
+  };
+
   render() {
+    const { isToggled } = this.state;
     return (
-      <a href="#" onClick={this.handleSubmit}>Click me</a>
+      <button type="button" onClick={this.handleSubmit}>
+        {isToggled ? 'On' : 'Off'}
+      </button>
     );
   }
 }
