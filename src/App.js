@@ -11,16 +11,17 @@ class App extends React.Component {
     this.state = { isToggled: true };
   }
 
-  handleSubmit = () => {
+  handleSubmit(id) {
+    console.log(id);
     this.setState((prevState) => ({
       isToggled: !prevState.isToggled,
     }));
-  };
+  }
 
   render() {
     const { isToggled } = this.state;
     return (
-      <button type="button" onClick={this.handleSubmit}>
+      <button type="button" onClick={this.handleSubmit.bind(this, 'hello')}>
         {isToggled ? 'On' : 'Off'}
       </button>
     );
