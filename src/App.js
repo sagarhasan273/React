@@ -1,7 +1,7 @@
-import Form from './components/Form';
+import Calculate from './components/Calculate';
 
 export default function App() {
   return (
-    <Form />
+    <Calculate />
   );
 }
