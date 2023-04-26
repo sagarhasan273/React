@@ -1,3 +1,5 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable no-const-assign */
 /* eslint-disable react/no-access-state-in-setstate */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-unused-vars */
@@ -12,6 +14,7 @@ export default class Form extends React.Component {
     text: 'JavaScript',
     textarea: 'JavaScript is a popular Web Language.',
     selectValue: ['coconut'],
+    isChecked: false,
   };
 
   output = '';
@@ -21,13 +24,16 @@ export default class Form extends React.Component {
     if (event.target.name.toString() === 'selectValue') {
       const array = this.state.selectValue;
       array.push(event.target.value);
-      console.log(array);
       this.setState({
         [event.target.name]: array,
       });
     } else {
+      const { target } = event;
+      const { name, value, type } = event.target;
+      const val = type === 'checkbox' ? target.checked : value;
+      console.log(val);
       this.setState({
-        [event.target.name]: event.target.value,
+        [name]: val,
       });
     }
 
@@ -41,7 +47,9 @@ export default class Form extends React.Component {
   };
 
   render() {
-    const { text, textarea, selectValue } = this.state;
+    const {
+      text, textarea, selectValue, isChecked,
+    } = this.state;
     return (
       <div>
         <form onSubmit={this.submitted}>
@@ -66,6 +74,12 @@ export default class Form extends React.Component {
               <option value="mango">Mango</option>
             </select>
           </label>
+          <br />
+          <br />
+          <label>
+            <input type="checkbox" name="isChecked" checked={isChecked} onChange={this.changeHandling} />
+          </label>
+          <br />
           <input type="submit" value="submit" />
         </form>
         <br />
