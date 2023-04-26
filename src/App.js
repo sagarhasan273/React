@@ -1,7 +1,7 @@
-import Calculate from './components/Calculate';
+import WelcomeDialog from './components/WelcomeDialog';
 
 export default function App() {
   return (
-    <Calculate />
+    <WelcomeDialog />
   );
 }
