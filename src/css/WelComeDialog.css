@@ -1,0 +1,17 @@
+.FancyBorder {
+	width: 700px;
+	height: 200px;
+	margin: auto;
+}
+
+.FancyBorder-blue {
+	background-color: blue;
+}
+
+.FancyBorder-aqua {
+	background-color: aqua;
+}
+
+.FancyBorder-aquamarine {
+	background-color: aquamarine;
+}

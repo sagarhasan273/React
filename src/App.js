@@ -1,12 +1,7 @@
-import { useEffect } from 'react';
-import SplitPane from './components/SplitPane';
+import SignUpDialog from './components/SignUpDialog';
 
 export default function App() {
-  useEffect(() => {
-    const element = document.querySelector('.FancyBorder');
-    console.log(element);
-  });
   return (
-    <SplitPane />
+    <SignUpDialog />
   );
 }
