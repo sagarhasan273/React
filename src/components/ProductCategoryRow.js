@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/no-array-index-key */
@@ -8,8 +9,24 @@ import data from './data';
 const array = require('lodash/array');
 const filter = require('lodash/collection');
 
-export function RenderData(rendarData, fdata) {
+let ele = [];
+
+function isSubsequence(str1, str2) {
+  let i = 0;
+  for (let j = 0; j < str2.length; j++) {
+    if (str1[i] === str2[j]) {
+      i++;
+    }
+    if (i === str1.length) {
+      return true;
+    }
+  }
+  return false;
+}
+
+export function RenderDataList(rendarData, fdata) {
   const elements = [];
+
   filter.filter(fdata, { category: rendarData }).forEach((item, index) => {
     elements.push(
       <div key={`li${index}`} className="li">
@@ -20,16 +37,29 @@ export function RenderData(rendarData, fdata) {
   });
   return elements;
 }
-export default function ProductCategoryRow({ color, checked }) {
-  const finalData = !checked.state.isChecked ? data : filter.filter(data, { stocked: true });
+
+export function RenderData(color, checked, cate, nam) {
+  let result = null;
+  if (cate || nam) {
+    result = data.filter((item) => {
+      return isSubsequence(cate, item.category) || isSubsequence(nam, item.name);
+    });
+  } else {
+    result = data;
+  }
+  ele = [];
+  const finalData = !checked.state.isChecked ? result : filter.filter(result, { stocked: true });
   const uniqueCategories = array.uniqBy(finalData, 'category').map((item) => item.category);
-  const ele = [];
   uniqueCategories.forEach((categories, index) => {
     ele.push(<div className={categories} key={`c${index}`}>
 <div key={`cli${index}`} className={`cli cli-${color}`}>{categories}</div>
-        {RenderData(categories, finalData)}
+        {RenderDataList(categories, finalData)}
              </div>);
   });
+}
+
+export default function ProductCategoryRow({ color, checked }) {
+  RenderData(color, checked, checked.state.searchValue, checked.state.searchValue);
   return (
     <div className="ProductTable">
         {ele}
