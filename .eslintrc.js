@@ -23,7 +23,7 @@ module.exports = {
     'no-console': 0,
     'react/state-in-constructor': 0,
     'react/jsx-indent': 1,
-    // indent: 0,
+    indent: 0,
     'linebreak-style': 0,
     'react/prop-types': 0,
     'jsx-a11y/click-events-have-key-events': 0,

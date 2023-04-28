@@ -1,7 +1,7 @@
-import FilterableProductTable from './components/FilterableProductTable';
+import Accesibility from './components/Accesibility';
 
 export default function App() {
   return (
-    <FilterableProductTable color="orange" />
+    <Accesibility color="orange" />
   );
 }
