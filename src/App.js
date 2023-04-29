@@ -1,7 +1,11 @@
-import Accesibility from './components/Accesibility';
+import ClickCounter from './components/ClickCounter';
+import HoverCounter from './components/HoverCounter';
 
 export default function App() {
   return (
-    <Accesibility color="orange" />
+    <>
+      <ClickCounter />
+      <HoverCounter />
+    </>
   );
 }
