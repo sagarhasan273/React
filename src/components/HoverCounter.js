@@ -1,10 +1,12 @@
 /* eslint-disable jsx-a11y/mouse-events-have-key-events */
-import React from 'react';
+import ThemeContext from './themeContext';
 
 function HoverCounter({ counter, increament }) {
   return (
     <div>
-      <h1 onMouseOver={increament}>Hovered {counter} times.</h1>
+      <ThemeContext.Consumer>
+        {(value) => <h1 style={value} onMouseOver={increament}>Hovered {counter} times.</h1>}
+      </ThemeContext.Consumer>
     </div>
   );
 }
