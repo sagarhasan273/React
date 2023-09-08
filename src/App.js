@@ -1,9 +1,9 @@
-import ClickCounter from './components/ClickCounter';
+import Path from './components/Path';
 
 export default function App() {
   return (
     <div>
-      <ClickCounter />
+      <Path />
     </div>
   );
 }
