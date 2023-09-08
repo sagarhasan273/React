@@ -1,10 +1,9 @@
-import Todo from './components/Todo';
+import ClickCounter from './components/ClickCounter';
 
 export default function App() {
   return (
     <div>
-
-      <Todo />
+      <ClickCounter />
     </div>
   );
 }
