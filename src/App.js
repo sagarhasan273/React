@@ -1,9 +1,9 @@
-import Path from './components/Path';
+import RecursionVisualization from './components/RecursionVisualization';
 
 export default function App() {
   return (
     <div>
-      <Path />
+      <RecursionVisualization />
     </div>
   );
 }
