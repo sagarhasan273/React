@@ -1,9 +1,9 @@
-import Path from './components/Path';
+import Nodes from './components/Nodes';
 
 export default function App() {
   return (
     <div>
-      <Path />
+      <Nodes />
     </div>
   );
 }
