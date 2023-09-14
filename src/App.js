@@ -1,9 +1,9 @@
-import Nodes from './components/Nodes';
+import Recursive from './components/Recursive';
 
 export default function App() {
   return (
     <div>
-      <Nodes />
+      <Recursive />
     </div>
   );
 }
