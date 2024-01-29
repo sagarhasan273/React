@@ -12,6 +12,10 @@ yarn -v`
 ```
 npm i -g yarn
 ```
+#### =>* 	if yarn not working:
+```
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
 #### =>* 	To check create-react-app:
 ```
 create-react-app
